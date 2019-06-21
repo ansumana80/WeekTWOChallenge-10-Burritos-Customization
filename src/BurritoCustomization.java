@@ -49,26 +49,31 @@ public class BurritoCustomization
         int index4=Salsa.size();
         int index5=Veggies.size();
 
-        do {
-
-            int rice_random=rand.nextInt(Rice.size());
-            System.out.println(Rice.get(rice_random));
-
-            int meat_random=rand.nextInt(Meat.size());
-            System.out.println(Rice.get(meat_random));
-
-            int beans_random=rand.nextInt(Beans.size());
-            System.out.println(Rice.get(beans_random));
-
-            int salsa_random=rand.nextInt(Salsa.size());
-            System.out.println(Rice.get(salsa_random));
-
-            int veggies_random=rand.nextInt(Veggies.size());
-            System.out.println(Rice.get(veggies_random));
 
 
-        }while (!userResponse.equalsIgnoreCase("n"));
-        keyboard.close();
+            System.out.println("May I order 10 burritos in random combination?");
+
+            //Take user's response
+            userResponse=keyboard.nextLine();
+            int num=0;
+
+            do {int rice_random=rand.nextInt(Rice.size());
+
+                int meat_random=rand.nextInt(Meat.size());
+
+                int beans_random=rand.nextInt(Beans.size());
+
+                int salsa_random=rand.nextInt(Salsa.size());
+
+                int veggies_random=rand.nextInt(Veggies.size());
+
+                System.out.println("Burrito" + num + ":" + Rice.get(rice_random))+ Meat.get(meat_random)  +
+                        Beans.get(beans_random + Salsa.get(salsa_random) + Veggies.get(veggies_random));
+
+
+
+            }while (!userResponse.equalsIgnoreCase("n"));
+             keyboard.close();
 
 
 
