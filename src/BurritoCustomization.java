@@ -67,8 +67,11 @@ public class BurritoCustomization
 
                 int veggies_random=rand.nextInt(Veggies.size());
 
-                System.out.println("Burrito" + num + ":" + Rice.get(rice_random))+ Meat.get(meat_random)  +
-                        Beans.get(beans_random + Salsa.get(salsa_random) + Veggies.get(veggies_random));
+//
+//
+                System.out.println("Burito" + num + Rice.get(rice_random) + Meat.get(meat_random) + Beans.get(beans_random)
+                + Salsa.get(salsa_random)+ Veggies.get(veggies_random));
+
 
 
 
