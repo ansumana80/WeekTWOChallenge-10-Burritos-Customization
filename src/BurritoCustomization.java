@@ -1,8 +1,7 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class BurritoCustomization
 {
@@ -13,6 +12,8 @@ public class BurritoCustomization
         Random rand = new Random();
         Scanner keyboard= new Scanner(System.in);
         String userResponse="";
+        int userResponsenum=10;
+
 
         ArrayList<String> Rice = new ArrayList<String>();
         Rice.add("white");
@@ -43,52 +44,23 @@ public class BurritoCustomization
         Veggies.add("fajita veggies");
         Veggies.add("no veggies");
 
-        int index1= Rice.size();
-        int index2 =Meat.size();
-        int index3=Beans.size();
-        int index4=Salsa.size();
-        int index5=Veggies.size();
+        System.out.println("How many burritos would like to order, please ?");
+        System.out.println("I would like to order 10 burritos with random selections.");
+        System.out.println("Enter Exactly the number 10.");
+        userResponse = keyboard.nextLine();
 
-
-
-            System.out.println("May I order 10 burritos in random combination?");
-
-            //Take user's response
-            userResponse=keyboard.nextLine();
-            int num=0;
-
-            do {int rice_random=rand.nextInt(Rice.size());
-
+        for(int i=0; i<=9; i++)
+        {
+            //generating random indexes from all the 5 array lists and assigning them
+                int rice_random=rand.nextInt(Rice.size());
                 int meat_random=rand.nextInt(Meat.size());
-
                 int beans_random=rand.nextInt(Beans.size());
-
                 int salsa_random=rand.nextInt(Salsa.size());
-
                 int veggies_random=rand.nextInt(Veggies.size());
+                System.out.println("Burrito: "+ Rice.get(rice_random)+ ", "+ Meat.get(meat_random)+", "+
+                        Beans.get(beans_random) + ", "+ Salsa.get(salsa_random)+ "," +Veggies.get(veggies_random));
 
-//
-//
-                System.out.println("Burito" + num + Rice.get(rice_random) + Meat.get(meat_random) + Beans.get(beans_random)
-                + Salsa.get(salsa_random)+ Veggies.get(veggies_random));
-
-
-
-
-            }while (!userResponse.equalsIgnoreCase("n"));
-             keyboard.close();
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+        System.out.println("Thanks for your order, please come again");
     }
 }
